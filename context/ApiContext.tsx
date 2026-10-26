@@ -43,6 +43,7 @@ export interface TeamMember {
   linkedin: string | null;
   email: string | null;
   phone: string | null;
+  order?: number;
 }
 
 export interface Certificate {
