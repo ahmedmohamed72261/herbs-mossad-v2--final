@@ -27,7 +27,7 @@ const ProductCard: FC<ProductCardProps> = ({
 
   return (
     <article className="card-organic group">
-      <div className="img-frame relative m-3 h-[220px] rounded-[16px]">
+      <div className="img-frame relative m-3 h-[220px] rounded-[16px] bg-[#EEF2EE]">
         {isFeatured && (
           <span className="tag-sale ltr:!left-4 rtl:!right-4 !top-4">
             {isEn ? 'Featured' : 'مميز'}
@@ -38,34 +38,34 @@ const ProductCard: FC<ProductCardProps> = ({
           {imageUrl ? (
             <img src={imageUrl} alt={name} />
           ) : (
-            <span className="grid h-full w-full place-items-center bg-[#F6F4EC] text-5xl">🌿</span>
+            <span className="grid h-full w-full place-items-center bg-[#FAF8F5] text-5xl">🌿</span>
           )}
         </Link>
       </div>
 
       <div className="flex flex-1 flex-col px-6 pb-6 pt-2">
-        <span className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#2D6A35] dark:text-[#D1F349]">
+        <span className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#2D6A35] dark:text-[#C6A15B]">
           {category}
         </span>
-        <h3 className="mt-2 font-display text-[19px] font-bold capitalize leading-snug text-[#0D1615] dark:text-white">
-          <Link href={`/products/${id}`} className="transition hover:text-[#2D6A35] dark:hover:text-[#D1F349]">
+        <h3 className="mt-2 font-display text-[18px] font-bold capitalize leading-snug text-[#0F221B] dark:text-white">
+          <Link href={`/products/${id}`} className="transition hover:text-[#2D6A35] dark:hover:text-[#C6A15B]">
             {name}
           </Link>
         </h3>
-        <p className="mt-2 line-clamp-2 flex-grow text-[15px] leading-[1.8] text-[#2E4237] dark:text-white/80">
+        <p className="mt-2 line-clamp-2 flex-grow text-[14px] leading-relaxed text-[#3B4D44] dark:text-white/80">
           {description}
         </p>
 
-        <div className="mt-4 flex items-center justify-between gap-3 border-t border-[#E2E2E2] pt-4 dark:border-white/10">
+        <div className="mt-5 flex items-center justify-between gap-3 border-t border-[#E2E8E3] pt-4 dark:border-white/10">
           <Link
             href="/contact"
-            className="rounded-[10px] bg-[#A5C232] px-4 py-2 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0D1615] shadow-sm transition hover:bg-[#0D1615] hover:text-white dark:hover:bg-white dark:hover:text-[#0D1615]"
+            className="rounded-[10px] bg-[#7E9E2C] px-4 py-2 text-[12px] font-bold uppercase tracking-[0.06em] text-white shadow-sm transition duration-300 hover:bg-[#205338] whitespace-nowrap"
           >
             {isEn ? 'Request Quote' : 'طلب عرض سعر'}
           </Link>
           <Link
             href={`/products/${id}`}
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-[10px] border border-[#E2E2E2] text-[#0D1615] transition hover:border-[#0D1615] dark:border-white/15 dark:text-white"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-[10px] border border-[#E2E8E3] text-[#0F221B] transition duration-300 hover:border-[#7E9E2C] hover:bg-[#FAF8F5] dark:border-white/15 dark:text-white dark:hover:bg-white/10"
             aria-label={isEn ? 'View details' : 'عرض التفاصيل'}
           >
             <FiArrowRight className="h-4 w-4 rtl:rotate-180" />

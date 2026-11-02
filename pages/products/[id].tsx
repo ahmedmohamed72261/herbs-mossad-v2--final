@@ -389,7 +389,7 @@ const ProductDetails = ({ product: initialProduct, suggestedProducts: initialSug
 
       {/* Suggested Products Section */}
       {suggestedProducts.length > 0 && (
-        <section className="section-shell border-t border-[#E2E2E2] bg-[#F8F8F8] dark:border-white/10 dark:bg-[#0A0F0E]">
+        <section className="section-shell border-t border-[#E2E8E3] section-dim">
           <div className="container">
             <FadeIn>
               <div className="mb-12 text-center">

@@ -4,13 +4,9 @@ import toast from 'react-hot-toast';
 import { useAppStore } from '@/store';
 import { translations } from '@/lib/translations';
 import {
-  FiArrowRight,
   FiFacebook,
   FiInstagram,
   FiLinkedin,
-  FiMail,
-  FiMapPin,
-  FiPhone,
   FiSend,
   FiTwitter,
 } from 'react-icons/fi';
@@ -22,14 +18,10 @@ const Footer = () => {
   const isEn = language === 'en';
 
   const copy = {
-    location: isEn ? 'LOCATION' : 'الموقع',
-    emailUs: isEn ? 'EMAIL US' : 'راسلنا',
-    phone: isEn ? 'PHONE' : 'الهاتف',
-    contactUs: isEn ? 'Contact Us' : 'اتصل بنا',
     about:
       isEn
         ? 'Exporting premium herbs, spices, seeds, and botanical ingredients with careful sourcing, strict quality control, and professional international handling.'
-        : 'نصدر أعشابًا وتوابل وبذورًا ومكونات نباتية فاخرة مع توريد دقيق ورقابة صارمة على الجودة وتعامل دولي احترافي.',
+        : 'نصدر أعشاباً وتوابل وبذوراً ومكونات نباتية فاخرة مع توريد دقيق ورقابة صارمة على الجودة وتعامل دولي احترافي.',
     pages: isEn ? 'PAGES' : 'الصفحات',
     support: isEn ? 'SUPPORT' : 'الدعم',
     newsletter: isEn ? 'JOIN OUR MAILING LIST' : 'انضم إلى قائمتنا البريدية',
@@ -40,7 +32,7 @@ const Footer = () => {
     emailPlaceholder: isEn ? 'Your email address' : 'بريدك الإلكتروني',
     subscribe: isEn ? 'Subscribe' : 'اشترك',
     rights: isEn ? 'All Rights Reserved.' : 'جميع الحقوق محفوظة.',
-    subscribed: isEn ? 'Thanks for subscribing!' : 'شكرًا لاشتراكك!',
+    subscribed: isEn ? 'Thanks for subscribing!' : 'شكراً لاشتراكك!',
   };
 
   const pageLinks = [
@@ -66,97 +58,30 @@ const Footer = () => {
   };
 
   return (
-    <footer className={`relative overflow-hidden bg-[#0D1615] text-white/75 ${language === 'ar' ? 'rtl' : ''}`}>
-      <img
-        src="/images/organic/footer-bg.webp"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover opacity-10"
-      />
-
+    <footer className={`relative overflow-hidden bg-[#FAF8F5] text-[#2C3F34] border-t border-[#E2E8E3] dark:bg-[#0C1512] dark:text-[#D0DDD5] dark:border-white/10 ${language === 'ar' ? 'rtl' : ''}`}>
       <div className="relative">
-        {/* contact strip */}
-        <div className="border-b border-white/10">
-          <div className="container grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <h5 className="mb-4 inline-flex items-center gap-3 font-display text-[17px] font-semibold uppercase tracking-wide text-white">
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-[#A5C232]/15 text-[#A5C232]">
-                  <FiMapPin className="h-4 w-4" />
-                </span>
-                {copy.location}
-              </h5>
-              <p className="text-[15px] leading-[1.9]">
-                {isEn ? 'Kafr Bani Ali, Samasta,' : 'كفر بني علي، سمسطا،'}
-                <br />
-                {isEn ? 'Beni Suef, Egypt' : 'بني سويف، مصر'}
-              </p>
-            </div>
-
-            <div>
-              <h5 className="mb-4 inline-flex items-center gap-3 font-display text-[17px] font-semibold uppercase tracking-wide text-white">
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-[#A5C232]/15 text-[#A5C232]">
-                  <FiMail className="h-4 w-4" />
-                </span>
-                {copy.emailUs}
-              </h5>
-              <a href="mailto:export@herbiva.com" className="block text-[15px] transition hover:text-[#D1F349]">
-                export@herbiva.com
-              </a>
-              <a href="mailto:sales@herbiva.com" className="block text-[15px] transition hover:text-[#D1F349]">
-                sales@herbiva.com
-              </a>
-            </div>
-
-            <div>
-              <h5 className="mb-4 inline-flex items-center gap-3 font-display text-[17px] font-semibold uppercase tracking-wide text-white">
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-[#A5C232]/15 text-[#A5C232]">
-                  <FiPhone className="h-4 w-4" />
-                </span>
-                {copy.phone}
-              </h5>
-              <a href="tel:+201107762512" className="block text-[15px] transition hover:text-[#D1F349]">
-                +20 110 776 2512
-              </a>
-              <a
-                href="https://wa.me/201107762512"
-                target="_blank"
-                rel="noreferrer"
-                className="block text-[15px] transition hover:text-[#D1F349]"
-              >
-                {isEn ? 'WhatsApp: +20 110 776 2512' : 'واتساب: 00201107762512'}
-              </a>
-            </div>
-
-            <div className="flex items-center lg:justify-end">
-              <Link href="/contact" className="btn-primary">
-                {copy.contactUs} <FiArrowRight className="h-4 w-4 rtl:rotate-180" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* main footer */}
-        <div className="container grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-12">
+        {/* Main Footer Columns */}
+        <div className="container grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="flex items-center">
               <Link href="/" className="block">
                 <img
                   src="/images/logo-horizental.png"
                   alt={t.brand.name}
-                  className="h-10 w-auto brightness-0 invert"
+                  className="h-10 w-auto dark:brightness-0 dark:invert"
                 />
               </Link>
-              <div className="border-s border-white/15 ps-4 text-[12px] font-medium tracking-wide text-white/60 ltr:ms-5 rtl:ms-5">
-                <span className="italic">Nature, sourced with trust</span>
+              <div className="border-s border-[#DCDCDC] ps-4 text-[12px] font-medium tracking-wide text-[#55695D] ltr:ms-5 rtl:ms-5 dark:border-white/15 dark:text-white/60">
+                <span className="italic font-semibold text-[#8C6D2D] dark:text-[#C6A15B]">{t.brand.tagline}</span>
               </div>
             </div>
-            <p className="mt-5 max-w-sm text-[15px] leading-[1.9]">{copy.about}</p>
+            <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-[#3B4E44] dark:text-white/70">{copy.about}</p>
             <div className="mt-6 flex gap-3">
               {[FiFacebook, FiTwitter, FiInstagram, FiLinkedin].map((Icon, index) => (
                 <a
                   key={index}
                   href="#"
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/12 bg-white/5 text-white/75 transition hover:border-[#A5C232] hover:bg-[#A5C232] hover:text-white"
+                  className="grid h-10 w-10 place-items-center rounded-xl border border-[#D5DFD7] bg-white text-[#2C3F34] transition hover:border-[#7E9E2C] hover:bg-[#7E9E2C] hover:text-white dark:border-white/15 dark:bg-white/5 dark:text-white dark:hover:bg-[#7E9E2C]"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -165,13 +90,13 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h5 className="mb-5 font-display text-[17px] font-semibold uppercase tracking-wide text-white">
+            <h5 className="mb-4 font-display text-[15px] font-bold uppercase tracking-wider text-[#0E231B] dark:text-white">
               {copy.pages}
             </h5>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {pageLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-[15px] transition hover:text-[#D1F349]">
+                  <Link href={item.href} className="text-[14px] text-[#3B4E44] transition hover:text-[#2D6A35] dark:text-white/70 dark:hover:text-[#C6A15B]">
                     {item.label}
                   </Link>
                 </li>
@@ -180,13 +105,13 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-2">
-            <h5 className="mb-5 font-display text-[17px] font-semibold uppercase tracking-wide text-white">
+            <h5 className="mb-4 font-display text-[15px] font-bold uppercase tracking-wider text-[#0E231B] dark:text-white">
               {copy.support}
             </h5>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {supportLinks.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-[15px] transition hover:text-[#D1F349]">
+                  <Link href={item.href} className="text-[14px] text-[#3B4E44] transition hover:text-[#2D6A35] dark:text-white/70 dark:hover:text-[#C6A15B]">
                     {item.label}
                   </Link>
                 </li>
@@ -195,18 +120,18 @@ const Footer = () => {
           </div>
 
           <div className="lg:col-span-4">
-            <h5 className="mb-5 font-display text-[17px] font-semibold uppercase tracking-wide text-white">
+            <h5 className="mb-4 font-display text-[15px] font-bold uppercase tracking-wider text-[#0E231B] dark:text-white">
               {copy.newsletter}
             </h5>
-            <p className="text-[15px] leading-[1.9]">{copy.newsletterText}</p>
-            <form onSubmit={handleSubscribe} className="mt-5 flex items-center gap-2">
+            <p className="text-[14px] leading-relaxed text-[#3B4E44] dark:text-white/70">{copy.newsletterText}</p>
+            <form onSubmit={handleSubscribe} className="mt-4 flex items-center gap-2">
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder={copy.emailPlaceholder}
-                className="h-[50px] w-full rounded-[5px] border border-white/15 bg-white/5 px-4 text-[15px] text-white outline-none transition placeholder:text-white/40 focus:border-[#A5C232]"
+                className="h-[48px] w-full rounded-[8px] border border-[#D5DFD7] bg-white px-4 text-[14px] text-[#0E231B] outline-none transition placeholder:text-[#6F8077] focus:border-[#7E9E2C] focus:ring-2 focus:ring-[#7E9E2C]/20 dark:border-white/15 dark:bg-white/5 dark:text-white"
               />
               <button type="submit" className="btn-primary shrink-0 px-5" aria-label={copy.subscribe}>
                 <FiSend className="h-4 w-4" />
@@ -215,17 +140,17 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* copyright */}
-        <div className="border-t border-white/10">
-          <div className="container flex flex-col items-center justify-between gap-3 py-5 text-[14px] text-white/60 md:flex-row">
+        {/* Copyright Bar */}
+        <div className="border-t border-[#E2E8E3] dark:border-white/10">
+          <div className="container flex flex-col items-center justify-between gap-3 py-5 text-[13px] text-[#55695E] dark:text-white/50 md:flex-row">
             <p>
               &copy; {new Date().getFullYear()} {t.brand.name}. {copy.rights}
             </p>
             <div className="flex gap-6">
-              <Link href="#" className="transition hover:text-[#D1F349]">
+              <Link href="#" className="transition hover:text-[#2D6A35] dark:hover:text-[#C6A15B]">
                 {isEn ? 'Terms & Conditions' : 'الشروط والأحكام'}
               </Link>
-              <Link href="#" className="transition hover:text-[#D1F349]">
+              <Link href="#" className="transition hover:text-[#2D6A35] dark:hover:text-[#C6A15B]">
                 {isEn ? 'Privacy Policy' : 'سياسة الخصوصية'}
               </Link>
             </div>

@@ -47,7 +47,7 @@ export default function GoToTop() {
           whileTap={{ scale: 0.95 }}
           title={language === 'en' ? 'Go to top' : 'العودة للأعلى'}
           aria-label="Go to top"
-          className={`fixed bottom-8 ${positionClass} z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#0D1615] to-[#A5C232] text-white shadow-lg ring-2 ring-white/20 transition-all duration-300 hover:ring-white/40 focus:outline-none focus:ring-4 focus:ring-[#A5C232]/50 group`}
+          className={`fixed bottom-8 ${positionClass} z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#0E221B] to-[#7E9E2C] text-white shadow-lg ring-2 ring-white/20 transition-all duration-300 hover:ring-white/40 focus:outline-none focus:ring-4 focus:ring-[#7E9E2C]/50 group`}
         >
           <FiArrowUp className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
 
@@ -55,8 +55,8 @@ export default function GoToTop() {
           <motion.div
             animate={{
               boxShadow: [
-                '0 0 0 0 rgba(165, 194, 50, 0.5)',
-                '0 0 0 12px rgba(165, 194, 50, 0)',
+                '0 0 0 0 rgba(126, 158, 44, 0.5)',
+                '0 0 0 12px rgba(126, 158, 44, 0)',
               ],
             }}
             transition={{

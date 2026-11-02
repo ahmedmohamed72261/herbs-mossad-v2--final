@@ -66,7 +66,7 @@ const About = () => {
       />
 
       {/* 1. STORY & COMPANY OVERVIEW */}
-      <section className="section-shell bg-white dark:bg-[#0B100E]">
+      <section className="section-shell bg-white dark:bg-[#0C1512]">
         <div className="container grid items-center gap-12 lg:grid-cols-2">
           <div className="img-frame h-[380px] rounded-2xl lg:h-[480px]">
             <img src="/images/about.jpg" alt={page.storyTitle} />
@@ -79,7 +79,7 @@ const About = () => {
             </span>
             <h2 className="section-title mt-2">{page.storyTitle}</h2>
             <p className="section-lead mt-5">{page.storyDescriptionOne}</p>
-            <p className="mt-4 text-base leading-relaxed text-[#55695D] dark:text-white/70">
+            <p className="mt-4 text-base leading-relaxed text-[#3B4D44] dark:text-white/70">
               {page.storyDescriptionTwo}
             </p>
 
@@ -96,8 +96,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* 2. WHO WE ARE & OUR VISION (Transferred from Home) */}
-      <section className="section-shell border-y border-[#EAE6DF] bg-[#FAF8F5] dark:border-white/5 dark:bg-[#0F1613]">
+      {/* 2. WHO WE ARE & OUR VISION */}
+      <section className="section-shell border-y border-[#E2E8E3] bg-[#FAF8F5] dark:border-white/5 dark:bg-[#0E1A15]">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <span className="eyebrow justify-center">
@@ -111,15 +111,15 @@ const About = () => {
           </div>
 
           {/* Strategic Quote Card */}
-          <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-[#A5C232]/30 bg-white p-7 text-center shadow-sm sm:p-9 dark:bg-[#121B17]">
-            <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-[#A5C232]">
+          <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-[#7E9E2C]/30 bg-white p-7 text-center shadow-sm sm:p-9 dark:bg-[#121B17]">
+            <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-[#2D6A35] dark:text-[#C6A15B]">
               {t.brand.visionTitle}
             </span>
-            <p className="font-display text-lg font-medium italic leading-relaxed text-[#1D2B24] sm:text-xl dark:text-white/90">
+            <p className="font-display text-lg font-medium italic leading-relaxed text-[#0F221B] sm:text-xl dark:text-white/90">
               &ldquo;{vision?.quote || t.brand.vision}&rdquo;
             </p>
-            <div className="mt-4 flex items-center justify-center gap-2 text-xs font-semibold text-[#65766A] dark:text-white/60">
-              <FiCheckCircle className="h-4 w-4 text-[#A5C232]" />
+            <div className="mt-4 flex items-center justify-center gap-2 text-xs font-semibold text-[#4A5B53] dark:text-white/60">
+              <FiCheckCircle className="h-4 w-4 text-[#7E9E2C]" />
               <span>{isAr ? 'Herbiva مصر • كبرى شركات توريد وتصدير الأعشاب الطبية والعطرية' : 'Herbiva Egypt • Premier Botanical Exporter'}</span>
             </div>
           </div>
@@ -127,82 +127,82 @@ const About = () => {
           {/* 3 Pillars: Who We Are | What We Export | What Sets Us Apart */}
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
             {/* 1. Who We Are */}
-            <div className="flex h-full flex-col justify-between rounded-2xl border border-[#E7E3DC] bg-white p-7 shadow-sm transition hover:border-[#A5C232] dark:border-white/10 dark:bg-[#121A17]">
+            <div className="flex h-full flex-col justify-between rounded-2xl border border-[#E2E8E3] bg-white p-7 shadow-sm transition hover:border-[#7E9E2C] dark:border-white/10 dark:bg-[#121A17]">
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#A5C232]/15 text-[#A5C232]">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#7E9E2C]/15 text-[#2D6A35]">
                     <FiGlobe className="h-6 w-6" />
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#A5C232]">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">
                     01 / {isAr ? 'الهوية' : 'Identity'}
                   </span>
                 </div>
-                <h3 className="mt-5 font-display text-xl font-bold text-[#0D1615] dark:text-white">
+                <h3 className="mt-5 font-display text-xl font-bold text-[#0F221B] dark:text-white">
                   {vision?.pillars?.[0]?.title || (isAr ? 'إحنا مين؟' : 'Who We Are')}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#55695D] dark:text-white/70">
+                <p className="mt-3 text-sm leading-relaxed text-[#3B4D44] dark:text-white/70">
                   {vision?.pillars?.[0]?.desc ||
                     (isAr
                       ? 'شركة مصرية متخصصة في تجهيز وتصدير الحاصلات الزراعية والنباتات العطرية والطبية من قلب بني سويف والفيوم. ندير الدورة الزراعية مباشرة من الحقل حتى التحميل في الحاويات بمعايير دولية صارمة.'
                       : 'A premier Egyptian agricultural export company operating from the heart of Egypt’s herbal belt (Beni Suef & Fayoum). Overseeing the agricultural cycle from field to container.')}
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 border-t border-[#EFECE6] pt-4 text-xs font-semibold text-[#0D1615] dark:border-white/10 dark:text-white/80">
-                <FiCheckCircle className="text-[#A5C232]" />
+              <div className="mt-6 flex items-center gap-2 border-t border-[#E2E8E3] pt-4 text-xs font-semibold text-[#0F221B] dark:border-white/10 dark:text-white/80">
+                <FiCheckCircle className="text-[#7E9E2C]" />
                 <span>{isAr ? 'مصدر مصري أصيل وموثوق 100%' : '100% Traceable Nile Basin Origin'}</span>
               </div>
             </div>
 
             {/* 2. What We Export */}
-            <div className="flex h-full flex-col justify-between rounded-2xl border border-[#E7E3DC] bg-white p-7 shadow-sm transition hover:border-[#A5C232] dark:border-white/10 dark:bg-[#121A17]">
+            <div className="flex h-full flex-col justify-between rounded-2xl border border-[#E2E8E3] bg-white p-7 shadow-sm transition hover:border-[#7E9E2C] dark:border-white/10 dark:bg-[#121A17]">
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#A5C232]/15 text-[#A5C232]">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#7E9E2C]/15 text-[#2D6A35]">
                     <FiPackage className="h-6 w-6" />
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#A5C232]">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">
                     02 / {isAr ? 'المنتجات' : 'Portfolio'}
                   </span>
                 </div>
-                <h3 className="mt-5 font-display text-xl font-bold text-[#0D1615] dark:text-white">
+                <h3 className="mt-5 font-display text-xl font-bold text-[#0F221B] dark:text-white">
                   {vision?.pillars?.[1]?.title || (isAr ? 'بنصدر إيه؟' : 'What We Export')}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#55695D] dark:text-white/70">
+                <p className="mt-3 text-sm leading-relaxed text-[#3B4D44] dark:text-white/70">
                   {vision?.pillars?.[1]?.desc ||
                     (isAr
                       ? 'أكبر مصدري بذور الكزبرة والشمر والأعشاب في مصر. نوفر كزبرة فرز ليزر، بذور شمر عالية الزيت، زهور ومجروش بابونج، أوراق ريحان، كركديه مجفف، بردقوش، نعناع، ينسون وكمون.'
                       : 'Leading coriander and fennel seed exporters in Egypt. Bulk portfolio includes Sortex coriander, fennel, chamomile, basil, hibiscus, marjoram, spearmint, anise, and cumin.')}
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 border-t border-[#EFECE6] pt-4 text-xs font-semibold text-[#0D1615] dark:border-white/10 dark:text-white/80">
-                <FiCheckCircle className="text-[#A5C232]" />
+              <div className="mt-6 flex items-center gap-2 border-t border-[#E2E8E3] pt-4 text-xs font-semibold text-[#0F221B] dark:border-white/10 dark:text-white/80">
+                <FiCheckCircle className="text-[#7E9E2C]" />
                 <span>{isAr ? 'حاويات كاملة وجزئية FCL & LCL' : 'FCL & LCL Bulk Worldwide'}</span>
               </div>
             </div>
 
             {/* 3. What Sets Us Apart */}
-            <div className="flex h-full flex-col justify-between rounded-2xl border border-[#E7E3DC] bg-white p-7 shadow-sm transition hover:border-[#A5C232] dark:border-white/10 dark:bg-[#121A17]">
+            <div className="flex h-full flex-col justify-between rounded-2xl border border-[#E2E8E3] bg-white p-7 shadow-sm transition hover:border-[#7E9E2C] dark:border-white/10 dark:bg-[#121A17]">
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#A5C232]/15 text-[#A5C232]">
+                  <span className="grid h-12 w-12 place-items-center rounded-xl bg-[#7E9E2C]/15 text-[#2D6A35]">
                     <FiAward className="h-6 w-6" />
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[#A5C232]">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#C6A15B]">
                     03 / {isAr ? 'الميزة التنافسية' : 'Advantage'}
                   </span>
                 </div>
-                <h3 className="mt-5 font-display text-xl font-bold text-[#0D1615] dark:text-white">
+                <h3 className="mt-5 font-display text-xl font-bold text-[#0F221B] dark:text-white">
                   {vision?.pillars?.[2]?.title || (isAr ? 'إيه اللي يميزنا؟' : 'What Sets Us Apart')}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#55695D] dark:text-white/70">
+                <p className="mt-3 text-sm leading-relaxed text-[#3B4D44] dark:text-white/70">
                   {vision?.pillars?.[2]?.desc ||
                     (isAr
                       ? 'نقاء فائق عبر الفرز الضوئي بالليزر Sortex، مطابقة نسب المبيدات للمواصفات الأوروبية والأمريكية، تعبئة بحرية مخصصة، واستخراج كامل شهادات الفحص الحجري وشهادات التحليل COA.'
                       : 'Optical Sortex laser grading for 99%+ purity, EU/USDA pesticide compliance, custom seaworthy packaging, and comprehensive phytosanitary, COA & origin documentation.')}
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 border-t border-[#EFECE6] pt-4 text-xs font-semibold text-[#0D1615] dark:border-white/10 dark:text-white/80">
-                <FiCheckCircle className="text-[#A5C232]" />
+              <div className="mt-6 flex items-center gap-2 border-t border-[#E2E8E3] pt-4 text-xs font-semibold text-[#0F221B] dark:border-white/10 dark:text-white/80">
+                <FiCheckCircle className="text-[#7E9E2C]" />
                 <span>{isAr ? 'ضمان المواصفات وتخليص جمركي سلس' : 'Guaranteed Specs & Swift Customs'}</span>
               </div>
             </div>
@@ -210,8 +210,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* 3. WHY US & DISCOVER OUR EXPERTISE (Transferred from Home) */}
-      <section className="section-shell bg-white dark:bg-[#0B100E]">
+      {/* 3. WHY US */}
+      <section className="section-shell bg-white dark:bg-[#0C1512]">
         <div className="container">
           <div className="mx-auto max-w-3xl text-center">
             <span className="eyebrow justify-center">
@@ -226,7 +226,7 @@ const About = () => {
             {whyUsFeatures.map((feature, idx) => (
               <div
                 key={feature.title}
-                className="overflow-hidden rounded-2xl border border-[#E7E3DC] bg-[#FAF8F5] shadow-sm transition hover:shadow-md dark:border-white/10 dark:bg-white/5"
+                className="overflow-hidden rounded-2xl border border-[#E2E8E3] bg-[#FAF8F5] shadow-sm transition hover:shadow-md hover:border-[#7E9E2C]/50 dark:border-white/10 dark:bg-white/5"
               >
                 <div className="h-48 w-full overflow-hidden">
                   <img
@@ -237,17 +237,17 @@ const About = () => {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3">
-                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#A5C232]/15 text-[#A5C232]">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#7E9E2C]/15 text-[#2D6A35]">
                       <feature.icon className="h-5 w-5" />
                     </span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#A5C232]">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#C6A15B]">
                       0{idx + 1}
                     </span>
                   </div>
-                  <h3 className="mt-4 font-display text-lg font-bold text-[#0D1615] dark:text-white">
+                  <h3 className="mt-4 font-display text-lg font-bold text-[#0F221B] dark:text-white">
                     {feature.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#5E5E5E] dark:text-white/70">
+                  <p className="mt-2 text-sm leading-relaxed text-[#4A5B53] dark:text-white/70">
                     {feature.description}
                   </p>
                 </div>
@@ -258,7 +258,7 @@ const About = () => {
       </section>
 
       {/* 4. MISSION / VISION / VALUES */}
-      <section className="section-shell bg-[#F6F4EC] dark:bg-[#101714]">
+      <section className="section-shell bg-[#FAF8F5] dark:bg-[#0E1A15]">
         <div className="container">
           <div className="mx-auto max-w-2xl text-center">
             <span className="eyebrow justify-center">
@@ -272,12 +272,12 @@ const About = () => {
             {values.map((value) => (
               <article key={value.title} className="card-organic p-8">
                 <span className="icon-badge mb-6">
-                  <value.icon className="h-8 w-8" />
+                  <value.icon className="h-8 w-8 text-[#7E9E2C]" />
                 </span>
-                <h3 className="font-display text-xl font-bold text-[#0D1615] dark:text-white">
+                <h3 className="font-display text-xl font-bold text-[#0F221B] dark:text-white">
                   {value.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#5E5E5E] dark:text-white/70">
+                <p className="mt-3 text-sm leading-relaxed text-[#4A5B53] dark:text-white/70">
                   {value.description}
                 </p>
               </article>
@@ -291,8 +291,8 @@ const About = () => {
         <div className="container grid grid-cols-2 gap-8 py-14 lg:grid-cols-4">
           {page.stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="stat-number text-white font-extrabold">{stat.number}</p>
-              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-white/90">
+              <p className="stat-number font-extrabold text-[#2D6A35] dark:text-[#7E9E2C]">{stat.number}</p>
+              <p className="mt-2 text-xs font-bold uppercase tracking-wider text-[#3B4D44] dark:text-[#D2DDD6]">
                 {stat.label}
               </p>
             </div>
@@ -301,24 +301,24 @@ const About = () => {
       </section>
 
       {/* 6. CALL TO ACTION */}
-      <section className="section-lime py-16">
+      <section className="section-lime py-16 border-t border-[#E2E8E3] dark:border-white/10">
         <div className="container flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-start">
           <div>
-            <h3 className="font-display text-2xl font-bold text-white sm:text-3xl">
+            <h3 className="font-display text-2xl font-bold text-[#0E231B] sm:text-3xl dark:text-white">
               {isAr ? 'جاهز لبدء تعاون تجاري موثوق؟' : 'Ready to Establish a Reliable Sourcing Partnership?'}
             </h3>
-            <p className="mt-2 max-w-xl text-sm text-white/85">
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#2C3F34] dark:text-[#E1ECE5]">
               {isAr
                 ? 'فريق التصدير لدينا جاهز لإعداد عروض أسعار تنافسية (FOB/CIF) وعينات معملية فورية.'
                 : 'Connect with our export desk for harvest purity reports, container configurations, and proforma invoices.'}
             </p>
           </div>
           <div className="flex shrink-0 flex-wrap gap-4">
-            <Link href="/contact" className="btn-dark px-8 py-3.5 font-bold shadow-md">
-              <span>{isAr ? 'اطلب عرض سعر الآن' : 'Request Instant Quotation'}</span>
+            <Link href="/contact" className="btn-primary px-8 py-3.5 font-bold shadow-md whitespace-nowrap">
+              <span className="whitespace-nowrap">{isAr ? 'اطلب عرض سعر الآن' : 'Request Instant Quotation'}</span>
             </Link>
-            <Link href="/catalog" className="btn-white px-8 py-3.5 font-bold">
-              <span>{t.nav.catalog}</span>
+            <Link href="/catalog" className="btn-white px-8 py-3.5 font-bold whitespace-nowrap">
+              <span className="whitespace-nowrap">{t.nav.catalog}</span>
             </Link>
           </div>
         </div>

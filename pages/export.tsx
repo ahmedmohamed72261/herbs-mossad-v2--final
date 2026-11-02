@@ -229,10 +229,10 @@ export default function ExportPage() {
 
             <div className="mb-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
               {[
-                { icon: FiGlobe, labelEn: 'Country of Origin', labelAr: 'بلد المنشأ', descEn: 'Egypt — Nile Valley region', descAr: 'مصر — منطقة وادي النيل', color: 'from-[#A5C232] to-[#D1F349]' },
-                { icon: FiShield, labelEn: 'Botanical Species', labelAr: 'النوع النباتي', descEn: 'Latin name & variety code', descAr: 'الاسم اللاتيني ورمز الصنف', color: 'from-[#FECB0E] to-[#A5C232]' },
-                { icon: FiClock, labelEn: 'Harvest Year', labelAr: 'سنة الحصاد', descEn: 'Season & harvest batch code', descAr: 'الموسم ورمز دفعة الحصاد', color: 'from-[#0D1615] to-[#272320]' },
-                { icon: FiPackage, labelEn: 'Processing Sequence', labelAr: 'تسلسل المعالجة', descEn: 'Step-by-step process log', descAr: 'سجل خطوة بخطوة للمعالجة', color: 'from-[#D1F349] to-[#A5C232]' },
+                { icon: FiGlobe, labelEn: 'Country of Origin', labelAr: 'بلد المنشأ', descEn: 'Egypt — Nile Valley region', descAr: 'مصر — منطقة وادي النيل', color: 'from-[#7E9E2C] to-[#C6A15B]' },
+                { icon: FiShield, labelEn: 'Botanical Species', labelAr: 'النوع النباتي', descEn: 'Latin name & variety code', descAr: 'الاسم اللاتيني ورمز الصنف', color: 'from-[#C6A15B] to-[#7E9E2C]' },
+                { icon: FiClock, labelEn: 'Harvest Year', labelAr: 'سنة الحصاد', descEn: 'Season & harvest batch code', descAr: 'الموسم ورمز دفعة الحصاد', color: 'from-[#0E221B] to-[#1E332B]' },
+                { icon: FiPackage, labelEn: 'Processing Sequence', labelAr: 'تسلسل المعالجة', descEn: 'Step-by-step process log', descAr: 'سجل خطوة بخطوة للمعالجة', color: 'from-[#7E9E2C] to-[#0E221B]' },
               ].map((item, idx) => {
                 const Icon = item.icon;
                 return (
@@ -368,26 +368,26 @@ export default function ExportPage() {
               </FadeIn>
               <FadeIn delay={0.1} className="order-1 lg:order-2">
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/10 text-[#D1F349]">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#7E9E2C]/15 text-[#2D6A35] dark:bg-white/10 dark:text-[#C6A15B]">
                     <FiGlobe className="h-6 w-6" />
                   </div>
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#D1F349]">
+                    <span className="text-xs font-bold uppercase tracking-[0.15em] text-[#2D6A35] dark:text-[#C6A15B]">
                       {isEn ? 'Section 04' : 'القسم 04'}
                     </span>
-                    <h2 className="font-display text-3xl font-bold text-white lg:text-4xl">
+                    <h2 className="font-display text-3xl font-bold text-[#0E231B] dark:text-white lg:text-4xl">
                       {isEn ? 'Packaging & Logistics' : 'التعبئة والخدمات اللوجستية'}
                     </h2>
                   </div>
                 </div>
-                <p className="text-base leading-relaxed text-white/75 lg:text-lg">
+                <p className="text-base leading-relaxed text-[#2C3F34] dark:text-[#E1ECE5] lg:text-lg">
                   {isEn ? sections[3].contentEn : sections[3].contentAr}
                 </p>
 
                 {/* Packaging & Documentation breakdown */}
                 <div className="mt-8 space-y-4">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-[#D1F349]">
+                    <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-[#2D6A35] dark:text-[#C6A15B]">
                       {isEn ? 'Tailored Export Packaging Options:' : 'خيارات التعبئة والتغليف المخصصة للمستورد:'}
                     </h4>
                     <div className="mt-2.5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -397,8 +397,8 @@ export default function ExportPage() {
                         { en: 'Reinforced Corrugated Cartons', ar: 'كراتين مقواة مخصصة للزهور والأوراق' },
                         { en: 'Jumbo Big Bags (500-1000 kg)', ar: 'أكياس جامبو للمطاحن والمصانع' },
                       ].map((pkg, idx) => (
-                        <div key={idx} className="flex items-center gap-2.5 rounded-[12px] border border-white/10 bg-white/5 px-3.5 py-2.5 text-xs font-medium text-white/85">
-                          <FiPackage className="h-3.5 w-3.5 shrink-0 text-[#A5C232]" />
+                        <div key={idx} className="flex items-center gap-2.5 rounded-[12px] border border-[#E2E8E3] bg-white px-3.5 py-2.5 text-xs font-semibold text-[#0E231B] shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-white/90">
+                          <FiPackage className="h-3.5 w-3.5 shrink-0 text-[#7E9E2C]" />
                           <span>{isEn ? pkg.en : pkg.ar}</span>
                         </div>
                       ))}
@@ -406,7 +406,7 @@ export default function ExportPage() {
                   </div>
 
                   <div className="pt-2">
-                    <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-[#D1F349]">
+                    <h4 className="text-xs font-bold uppercase tracking-[0.15em] text-[#2D6A35] dark:text-[#C6A15B]">
                       {isEn ? 'Official Export Documentation Provided:' : 'المستندات الرسمية المرفقة مع كل شحنة:'}
                     </h4>
                     <div className="mt-2.5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -416,8 +416,8 @@ export default function ExportPage() {
                         { en: 'Certificate of Analysis (Lab COA)', ar: 'شهادة تحليل الجودة ونسب النقاوة COA' },
                         { en: 'Fumigation & Inspection Certificate', ar: 'شهادة التبخير والتطهير البحري' },
                       ].map((doc, idx) => (
-                        <div key={idx} className="flex items-center gap-2.5 rounded-[12px] border border-white/10 bg-white/5 px-3.5 py-2.5 text-xs font-medium text-white/85">
-                          <FiCheckCircle className="h-3.5 w-3.5 shrink-0 text-[#D1F349]" />
+                        <div key={idx} className="flex items-center gap-2.5 rounded-[12px] border border-[#E2E8E3] bg-white px-3.5 py-2.5 text-xs font-semibold text-[#0E231B] shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-white/90">
+                          <FiCheckCircle className="h-3.5 w-3.5 shrink-0 text-[#7E9E2C]" />
                           <span>{isEn ? doc.en : doc.ar}</span>
                         </div>
                       ))}
@@ -491,17 +491,17 @@ export default function ExportPage() {
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-5">
               <FadeIn className="lg:col-span-2">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center gap-3 rounded-[4px] bg-[#D1F349]/10 px-4 py-2">
-                    <FiAward className="h-4 w-4 text-[#D1F349]" />
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#D1F349]">
+                  <div className="inline-flex items-center gap-3 rounded-[4px] bg-[#C6A15B]/15 px-4 py-2">
+                    <FiAward className="h-4 w-4 text-[#C6A15B]" />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#C6A15B]">
                       {isEn ? 'Section 06' : 'القسم 06'}
                     </span>
                   </div>
-                  <h2 className="font-display text-3xl font-bold leading-tight text-white lg:text-5xl">
+                  <h2 className="font-display text-3xl font-bold leading-tight text-[#0E231B] dark:text-white lg:text-5xl">
                     {isEn ? 'Our Commitment' : 'التزامنا'}
                   </h2>
-                  <div className="h-1 w-16 rounded-full bg-[#D1F349]" />
-                  <p className="text-sm leading-relaxed text-white/60">
+                  <div className="h-1 w-16 rounded-full bg-[#C6A15B]" />
+                  <p className="text-sm leading-relaxed text-[#3B4D44] dark:text-[#D2DDD6]">
                     {isEn
                       ? 'Building trust through complete transparency across every stage'
                       : 'بناء الثقة من خلال الشفافية الكاملة في كل مرحلة'}
@@ -509,18 +509,18 @@ export default function ExportPage() {
                 </div>
               </FadeIn>
               <FadeIn delay={0.1} className="lg:col-span-3">
-                <div className="relative rounded-[20px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm lg:p-10">
-                  <span className="absolute -left-3 -top-3 font-serif text-6xl leading-none text-[#D1F349]/20">&ldquo;</span>
-                  <p className="relative z-10 text-base leading-[1.9] text-white/80 lg:text-lg">
+                <div className="relative rounded-[20px] border border-[#E2E8E3] bg-white p-8 shadow-sm dark:border-white/10 dark:bg-white/[0.03] lg:p-10">
+                  <span className="absolute -left-3 -top-3 font-serif text-6xl leading-none text-[#C6A15B]/20">&ldquo;</span>
+                  <p className="relative z-10 text-base leading-[1.9] text-[#2C3F34] dark:text-[#E1ECE5] lg:text-lg">
                     {isEn ? sections[5].contentEn : sections[5].contentAr}
                   </p>
-                  <div className="mt-6 flex items-center gap-4 border-t border-white/10 pt-6">
-                    <div className="grid h-10 w-10 place-items-center rounded-full bg-[#D1F349]/20">
-                      <span className="text-xs font-bold text-[#D1F349]">HV</span>
+                  <div className="mt-6 flex items-center gap-4 border-t border-[#E2E8E3] pt-6 dark:border-white/10">
+                    <div className="grid h-10 w-10 place-items-center rounded-full bg-[#7E9E2C]/20">
+                      <span className="text-xs font-bold text-[#2D6A35] dark:text-[#C6A15B]">HV</span>
                     </div>
                     <div>
-                      <p className="text-sm font-bold text-white">Herbiva</p>
-                      <p className="text-xs text-white/50">{isEn ? 'Traceability Excellence' : 'التميز في التتبع'}</p>
+                      <p className="text-sm font-bold text-[#0E231B] dark:text-white">Herbiva</p>
+                      <p className="text-xs text-[#527163] dark:text-[#B8C8BF]">{isEn ? 'Traceability Excellence' : 'التميز في التتبع'}</p>
                     </div>
                   </div>
                 </div>
@@ -551,18 +551,18 @@ export default function ExportPage() {
             {exportImages.map((src, idx) => (
               <FadeIn key={src} delay={idx * 0.02}>
                 <div
-                  className="group relative cursor-pointer overflow-hidden rounded-[20px] bg-[#F8F8F8] break-inside-avoid dark:bg-white/5"
+                  className="group relative cursor-pointer overflow-hidden rounded-[20px] bg-[#F4F6F2] break-inside-avoid dark:bg-white/5"
                   onClick={() => openLightbox(idx)}
                 >
                   <img
                     src={src}
                     alt={`Export ${idx + 1}`}
-                    className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1615]/50 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1713]/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   <div className="absolute bottom-3 right-3 grid h-8 w-8 place-items-center rounded-full bg-white/90 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
-                    <FiArrowRight className="h-4 w-4 text-[#0D1615]" />
+                    <FiArrowRight className="h-4 w-4 text-[#0F221B]" />
                   </div>
                 </div>
               </FadeIn>
@@ -573,37 +573,37 @@ export default function ExportPage() {
 
 
       {/* CTA */}
-      <section className="section-dark py-[70px] lg:py-[110px]">
+      <section className="section-dark py-[70px] lg:py-[100px] border-t border-[#E2E8E3] dark:border-white/10">
         <div className="container">
           <div className="mx-auto max-w-4xl">
             <FadeIn>
               <div className="text-center">
-                <div className="mb-8 inline-flex items-center gap-2 rounded-[4px] bg-[#D1F349]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-[#D1F349]">
-                  <span className="h-2 w-2 animate-pulse rounded-full bg-[#D1F349]" />
+                <div className="mb-8 inline-flex items-center gap-2 rounded-[4px] bg-[#C6A15B]/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-[#2D6A35] dark:text-[#C6A15B]">
+                  <span className="h-2 w-2 animate-pulse rounded-full bg-[#7E9E2C] dark:bg-[#C6A15B]" />
                   {isEn ? 'Start Your Partnership' : 'ابدأ شراكتك'}
                 </div>
-                <h2 className="mb-6 font-display text-4xl font-bold leading-tight text-white lg:text-6xl">
+                <h2 className="mb-6 font-display text-4xl font-bold leading-tight text-[#0E231B] dark:text-white lg:text-6xl">
                   {isEn ? (
                     <>
-                      Partner with <span className="text-[#D1F349]">Us</span>
+                      Partner with <span className="text-[#2D6A35] dark:text-[#C6A15B]">Us</span>
                     </>
                   ) : (
                     'كن شريكاً لنا'
                   )}
                   <br />
                 </h2>
-                <p className="mx-auto mb-12 max-w-xl text-lg leading-relaxed text-white/60">
+                <p className="mx-auto mb-12 max-w-xl text-lg leading-relaxed text-[#3B4D44] dark:text-[#D2DDD6]">
                   {isEn
                     ? 'Experience the highest standards of traceability and quality. Our export team is ready to discuss your requirements.'
                     : 'اختبر أعلى معايير التتبع والجودة. فريق التصدير لدينا مستعد لمناقشة متطلباتك.'}
                 </p>
                 <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                  <a href="/contact" className="btn-primary px-10 py-4 text-lg">
-                    {isEn ? 'Contact Export Team' : 'اتصل بفريق التصدير'}
-                    <FiArrowRight className="h-5 w-5 rtl:rotate-180" />
+                  <a href="/contact" className="btn-primary px-10 py-4 text-lg whitespace-nowrap">
+                    <span>{isEn ? 'Contact Export Team' : 'اتصل بفريق التصدير'}</span>
+                    <FiArrowRight className="h-5 w-5 rtl:rotate-180 shrink-0" />
                   </a>
-                  <a href="/products" className="btn-white px-10 py-4 text-lg">
-                    {isEn ? 'Browse Products' : 'تصفح المنتجات'}
+                  <a href="/products" className="btn-white px-10 py-4 text-lg whitespace-nowrap">
+                    <span>{isEn ? 'Browse Products' : 'تصفح المنتجات'}</span>
                   </a>
                 </div>
               </div>
@@ -616,9 +616,9 @@ export default function ExportPage() {
                 { label: isEn ? 'Bulk Supply' : 'توريد بالجملة' },
               ].map((item, idx) => (
                 <FadeIn key={idx} delay={idx * 0.05}>
-                  <div className="flex items-center justify-center gap-2 rounded-[12px] border border-white/10 bg-white/5 px-4 py-3">
-                    <FiCheckCircle className="h-4 w-4 shrink-0 text-[#D1F349]" />
-                    <span className="text-sm font-semibold text-white/80">{item.label}</span>
+                  <div className="flex items-center justify-center gap-2 rounded-[12px] border border-[#E2E8E3] bg-white px-4 py-3 shadow-sm dark:border-white/10 dark:bg-white/5">
+                    <FiCheckCircle className="h-4 w-4 shrink-0 text-[#7E9E2C]" />
+                    <span className="text-sm font-semibold text-[#0E231B] dark:text-white/90">{item.label}</span>
                   </div>
                 </FadeIn>
               ))}

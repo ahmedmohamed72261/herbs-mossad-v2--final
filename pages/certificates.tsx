@@ -150,19 +150,19 @@ const Certificates = () => {
       <section className="section-lime py-[70px] lg:py-[100px]">
         <div className="container">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-            <div className="img-frame h-[380px] rounded-2xl lg:h-[480px] shadow-2xl border border-white/20">
+            <div className="img-frame h-[380px] rounded-2xl lg:h-[480px] shadow-lg border border-[#D5E2D4] bg-white">
               <img src="/images/lab.jpg" alt={page.journeyTitle || 'Processing Journey'} />
             </div>
 
             <div>
-              <span className="eyebrow text-white">
-                <img src="/images/logo-leaves.png" alt="" className="h-5 w-auto max-h-5 object-contain inline-block brightness-0 invert" />
+              <span className="eyebrow text-[#2D6A35] dark:text-[#C6A15B]">
+                <img src="/images/logo-leaves.png" alt="" className="h-5 w-auto max-h-5 object-contain inline-block" />
                 {page.journeyBadge || (language === 'ar' ? 'رحلة المعالجة والرقابة' : 'The Processing Journey')}
               </span>
-              <h2 className="section-title text-white mt-2">
+              <h2 className="section-title text-[#0E231B] mt-2 dark:text-white">
                 {page.journeyTitle || (language === 'ar' ? 'من الحصاد الحقلي إلى حاوية التصدير' : 'From Farm Harvest to Export Container')}
               </h2>
-              <p className="section-lead text-white/90 mt-4">
+              <p className="section-lead text-[#2C3F34] mt-4 dark:text-white/80">
                 {page.journeyDesc || (language === 'ar'
                   ? 'تضمن منشآت المعالجة في بني سويف بمصر احتفاظ كل محصول بزيوتها الطبيعية ونقائها الفائق بما يطابق ويتجاوز متطلبات الاستيراد العالمية.'
                   : 'Our processing facilities in Beni Suef, Egypt ensure that every botanical batch retains its active essential oils and natural aroma while exceeding international import requirements.')}
@@ -191,14 +191,14 @@ const Certificates = () => {
                     desc: language === 'ar' ? 'تعبئة مخصصة في أكياس كرافت أو بولي بروبلين أو بالات مع استخراج شهادات الصحة النباتية.' : 'Custom kraft, PP bags, or cartons with complete phytosanitary and fumigation certificates.',
                   },
                 ].map((item) => (
-                  <div key={item.step} className="rounded-xl border border-white/20 bg-white/15 p-4 backdrop-blur-sm transition hover:bg-white/25">
+                  <div key={item.step} className="rounded-xl border border-[#D5E2D4] bg-white/90 p-4 shadow-sm backdrop-blur-sm transition hover:bg-white hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10">
                     <div className="flex items-start gap-4">
-                      <span className="font-display text-base font-bold text-white">
+                      <span className="font-display text-base font-bold text-[#7E9E2C] dark:text-[#C6A15B]">
                         {item.step}
                       </span>
                       <div>
-                        <h3 className="font-display text-base font-bold text-white">{item.title}</h3>
-                        <p className="mt-1 text-xs leading-relaxed text-white/85">{item.desc}</p>
+                        <h3 className="font-display text-base font-bold text-[#0E231B] dark:text-white">{item.title}</h3>
+                        <p className="mt-1 text-xs leading-relaxed text-[#4A5B53] dark:text-white/70">{item.desc}</p>
                       </div>
                     </div>
                   </div>

@@ -92,17 +92,20 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* utility bar */}
-      <div className="hidden bg-[#0D1615] text-white/75 lg:block">
+      {/* Top Utility Bar */}
+      <div className="hidden bg-[#F4F7F2] text-[#2C3F34] border-b border-[#E0E8E1] transition-colors duration-300 dark:bg-[#070D0B] dark:text-white/80 dark:border-white/10 lg:block">
         <div className="container flex items-center justify-between py-2 text-[13px]">
           <div className="flex items-center gap-6">
-            <span className="inline-flex items-center gap-2">
-              <FiMapPin className="h-4 w-4 text-[#A5C232]" />
-              {language === 'ar' ? 'كفر بني علي، سمسطا – بني سويف، مصر' : 'Kafr Bani Ali, Samasta – Beni Suef, Egypt'}
+            <span className="inline-flex items-center gap-2 font-medium">
+              <FiMapPin className="h-4 w-4 text-[#2D6A35] dark:text-[#7E9E2C]" />
+              <span>{language === 'ar' ? 'كفر بني علي، سمسطا – بني سويف، مصر' : 'Kafr Bani Ali, Samasta – Beni Suef, Egypt'}</span>
             </span>
-            <a href="mailto:export@herbiva.com" className="inline-flex items-center gap-2 transition hover:text-[#D1F349]">
-              <FiMail className="h-4 w-4 text-[#A5C232]" />
-              export@herbiva.com
+            <a
+              href="mailto:export@herbiva.com"
+              className="inline-flex items-center gap-2 font-medium transition hover:text-[#2D6A35] dark:hover:text-[#C6A15B]"
+            >
+              <FiMail className="h-4 w-4 text-[#2D6A35] dark:text-[#7E9E2C]" />
+              <span>export@herbiva.com</span>
             </a>
           </div>
 
@@ -111,17 +114,17 @@ const Navbar = () => {
             <div className="relative" ref={langDropdownRef}>
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
-                className="inline-flex items-center gap-2 rounded-lg px-2.5 py-1 text-[13px] font-medium text-white/90 transition hover:bg-white/10 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-lg px-2.5 py-1 text-[13px] font-semibold text-[#2C3F34] transition hover:bg-[#E2EAE0] hover:text-[#0E231B] dark:text-white/90 dark:hover:bg-white/10 dark:hover:text-white"
                 aria-expanded={isLangOpen}
                 aria-label="Select Language"
               >
-                <FiGlobe className="h-4 w-4 text-[#A5C232]" />
+                <FiGlobe className="h-4 w-4 text-[#2D6A35] dark:text-[#7E9E2C]" />
                 <span>{currentLangObj.flag} {currentLangObj.short}</span>
                 <FiChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${isLangOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {isLangOpen && (
-                <div className="absolute top-full z-50 mt-1.5 w-40 overflow-hidden rounded-xl border border-white/10 bg-[#0D1615] p-1.5 shadow-2xl backdrop-blur-xl ltr:right-0 rtl:left-0">
+                <div className="absolute top-full z-50 mt-1.5 w-40 overflow-hidden rounded-xl border border-[#E2E8E3] bg-white p-1.5 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#0D1615] ltr:right-0 rtl:left-0">
                   {languagesList.map((lang) => (
                     <button
                       key={lang.code}
@@ -129,16 +132,17 @@ const Navbar = () => {
                         setLanguage(lang.code);
                         setIsLangOpen(false);
                       }}
-                      className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-start text-[13px] font-medium transition ${language === lang.code
-                          ? 'bg-[#A5C232]/20 text-[#A5C232]'
-                          : 'text-white/80 hover:bg-white/10 hover:text-white'
-                        }`}
+                      className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-start text-[13px] font-medium transition ${
+                        language === lang.code
+                          ? 'bg-[#7E9E2C]/15 text-[#2D6A35] font-bold dark:bg-[#7E9E2C]/20 dark:text-[#7E9E2C]'
+                          : 'text-[#2C3F34] hover:bg-[#F4F7F2] hover:text-[#0E231B] dark:text-white/80 dark:hover:bg-white/10 dark:hover:text-white'
+                      }`}
                     >
                       <span className="flex items-center gap-2">
                         <span>{lang.flag}</span>
                         <span>{lang.label}</span>
                       </span>
-                      {language === lang.code && <FiCheck className="h-3.5 w-3.5 text-[#A5C232]" />}
+                      {language === lang.code && <FiCheck className="h-3.5 w-3.5 text-[#2D6A35] dark:text-[#7E9E2C]" />}
                     </button>
                   ))}
                 </div>
@@ -147,7 +151,7 @@ const Navbar = () => {
 
             <button
               onClick={toggleTheme}
-              className="inline-flex items-center gap-1.5 text-white/80 transition hover:text-[#D1F349]"
+              className="inline-flex items-center gap-1.5 rounded-lg p-1 text-[#2C3F34] transition hover:bg-[#E2EAE0] hover:text-[#2D6A35] dark:text-white/80 dark:hover:bg-white/10 dark:hover:text-[#C6A15B]"
               aria-label="Toggle dark/light theme"
             >
               {theme === 'light' ? <FiMoon className="h-4 w-4" /> : <FiSun className="h-4 w-4" />}
@@ -156,16 +160,17 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* main nav */}
+      {/* Main Navbar */}
       <motion.nav
-        initial={{ opacity: 0, y: -16 }}
+        initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className={`border-b border-[#E2E2E2]/70 bg-white/95 backdrop-blur-xl transition-shadow duration-300 dark:bg-[#0F1613]/95 ${isScrolled ? 'shadow-[0_10px_30px_rgba(0,0,0,0.08)]' : ''
-          }`}
+        className={`border-b border-[#E2E8E3] bg-white/95 backdrop-blur-xl transition-shadow duration-300 dark:border-white/10 dark:bg-[#0C1512]/95 ${
+          isScrolled ? 'shadow-[0_8px_24px_rgba(14,34,27,0.06)]' : ''
+        }`}
       >
-        <div className="container flex items-center justify-between gap-3 py-3">
-          {/* Brand Logo & Marketing Slogan */}
+        <div className="container flex items-center justify-between gap-3 py-3.5">
+          {/* Brand Logo & Slogan */}
           <div className="flex shrink-0 items-center">
             <Link href="/" className="block">
               <img
@@ -174,33 +179,33 @@ const Navbar = () => {
                 className="h-10 w-auto transition-transform hover:scale-[1.02] dark:brightness-0 dark:invert"
               />
             </Link>
-            <div className="hidden border-s border-[#DCDCDC] ps-4 text-[12px] font-medium tracking-wide text-[#5D6F63] xl:inline-block ltr:ms-5 rtl:ms-5 dark:border-white/15 dark:text-white/60">
-              <span className="italic font-semibold text-[#A68036] dark:text-[#C6A15B]">{t.brand.tagline}</span>
+            <div className="hidden border-s border-[#DCDCDC] ps-4 text-[12px] font-medium tracking-wide text-[#55695D] xl:inline-block ltr:ms-5 rtl:ms-5 dark:border-white/15 dark:text-white/60">
+              <span className="italic font-semibold text-[#8C6D2D] dark:text-[#C6A15B]">{t.brand.tagline}</span>
             </div>
           </div>
 
+          {/* Desktop Navigation Links */}
           <div className="hidden items-center gap-0.5 xl:flex">
             {navLinks.map((link) => (
               <div key={link.href} className="group relative">
                 {link.dropdown ? (
                   <>
                     <button
-                      className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-[12px] px-2.5 py-2.5 text-[13px] font-bold transition ${isActive(link.href)
-                          ? 'text-[#245B2C] dark:text-[#D1F349]'
-                          : 'text-[#1D2B24] hover:text-[#245B2C] dark:text-white/85 dark:hover:text-[#D1F349]'
-                        }`}
+                      className={`inline-flex items-center gap-1 whitespace-nowrap rounded-[10px] px-2.5 2xl:px-3 py-2 text-[13px] font-bold transition ${
+                        isActive(link.href)
+                          ? 'text-[#2D6A35] bg-[#7E9E2C]/10 dark:text-[#C6A15B] dark:bg-white/5'
+                          : 'text-[#1D2B24] hover:text-[#2D6A35] hover:bg-[#FAF8F5] dark:text-white/90 dark:hover:text-[#C6A15B] dark:hover:bg-white/5'
+                      }`}
                     >
                       <span>{link.label}</span>
-                      <FiChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                      <FiChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" />
                     </button>
-                    <div
-                      className="invisible absolute top-full z-50 mt-2 w-56 translate-y-2 overflow-hidden rounded-[16px] border border-[#E2E2E2] bg-white p-2 opacity-0 shadow-[10px_20px_40px_rgba(0,0,0,0.12)] transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-white/10 dark:bg-[#0F1613] ltr:left-0 rtl:right-0"
-                    >
+                    <div className="invisible absolute top-full z-50 mt-2 w-56 translate-y-2 overflow-hidden rounded-[16px] border border-[#E2E8E3] bg-white p-2 opacity-0 shadow-[0_12px_32px_rgba(14,34,27,0.1)] transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 dark:border-white/10 dark:bg-[#111E19] ltr:left-0 rtl:right-0">
                       {productsDropdown.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="block rounded-[10px] px-4 py-2.5 text-[14px] font-semibold text-[#1D2B24] transition hover:bg-[#F6F4EC] hover:text-[#245B2C] dark:text-white/85 dark:hover:bg-white/5 dark:hover:text-[#D1F349]"
+                          className="block rounded-[10px] px-4 py-2.5 text-[14px] font-semibold text-[#1D2B24] transition hover:bg-[#FAF8F5] hover:text-[#2D6A35] dark:text-white/85 dark:hover:bg-white/5 dark:hover:text-[#C6A15B]"
                         >
                           {item.label}
                         </Link>
@@ -210,10 +215,11 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href={link.href}
-                    className={`block whitespace-nowrap rounded-[12px] px-2.5 py-2.5 text-[13px] font-bold transition ${isActive(link.href)
-                        ? 'text-[#245B2C] dark:text-[#D1F349]'
-                        : 'text-[#1D2B24] hover:text-[#245B2C] dark:text-white/85 dark:hover:text-[#D1F349]'
-                      }`}
+                    className={`block whitespace-nowrap rounded-[10px] px-2.5 2xl:px-3 py-2 text-[13px] font-bold transition ${
+                      isActive(link.href)
+                        ? 'text-[#2D6A35] bg-[#7E9E2C]/10 dark:text-[#C6A15B] dark:bg-white/5'
+                        : 'text-[#1D2B24] hover:text-[#2D6A35] hover:bg-[#FAF8F5] dark:text-white/90 dark:hover:text-[#C6A15B] dark:hover:bg-white/5'
+                    }`}
                   >
                     {link.label}
                   </Link>
@@ -222,15 +228,19 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-2">
-            <Link href="/contact" className="btn-primary btn-sm hidden xl:inline-flex">
-              <span>{t.homePage.quoteBtn || t.homePage.shopNow}</span>
-              <FiArrowRight className="h-4 w-4 rtl:rotate-180" />
+          {/* Right Action: Quote Button & Mobile Menu Toggle */}
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+            <Link
+              href="/contact"
+              className="btn-primary btn-sm hidden xl:inline-flex shadow-sm whitespace-nowrap shrink-0"
+            >
+              <span className="whitespace-nowrap">{t.homePage.quoteBtn || t.homePage.shopNow}</span>
+              <FiArrowRight className="h-4 w-4 rtl:rotate-180 shrink-0" />
             </Link>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="grid h-11 w-11 place-items-center rounded-[12px] border border-[#E2E2E2] text-[#0D1615] transition hover:border-[#0D1615] dark:border-white/15 dark:text-white xl:hidden"
+              className="grid h-10 w-10 place-items-center rounded-xl border border-[#E2E8E3] text-[#0F221B] transition hover:border-[#7E9E2C] dark:border-white/15 dark:text-white xl:hidden"
               aria-label="Toggle navigation"
             >
               {isMenuOpen ? <FiX className="h-5 w-5" /> : <FiMenu className="h-5 w-5" />}
@@ -239,10 +249,10 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* mobile menu */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="border-b border-[#E2E2E2] bg-white px-6 pb-6 pt-4 shadow-xl dark:border-white/10 dark:bg-[#0F1613] xl:hidden">
-          <p className="mb-4 border-b border-[#EFEFEF] pb-3 text-[12px] font-medium italic text-[#5D6F63] dark:border-white/10 dark:text-[#A7B3A9]">
+        <div className="border-b border-[#E2E8E3] bg-white px-6 pb-6 pt-4 shadow-xl dark:border-white/10 dark:bg-[#111E19] xl:hidden">
+          <p className="mb-4 border-b border-[#EFEFEF] pb-3 text-[12px] font-medium italic text-[#55695D] dark:border-white/10 dark:text-[#A7B3A9]">
             {t.brand.tagline}
           </p>
 
@@ -253,10 +263,14 @@ const Navbar = () => {
                   <>
                     <button
                       onClick={() => setIsProductsOpen((open) => !open)}
-                      className="flex w-full items-center justify-between rounded-[12px] px-4 py-3 text-[15px] font-semibold text-[#272320] dark:text-white/85"
+                      className="flex w-full items-center justify-between rounded-[12px] px-4 py-3 text-[15px] font-semibold text-[#253830] dark:text-white/85"
                     >
                       <span>{link.label}</span>
-                      <FiChevronDown className={`h-4 w-4 transition-transform ${isProductsOpen ? 'rotate-180' : ''}`} />
+                      <FiChevronDown
+                        className={`h-4 w-4 transition-transform ${
+                          isProductsOpen ? 'rotate-180' : ''
+                        }`}
+                      />
                     </button>
                     {isProductsOpen && (
                       <div className="mt-1 space-y-1 ltr:ml-4 rtl:mr-4">
@@ -264,7 +278,7 @@ const Navbar = () => {
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="block rounded-[10px] px-4 py-2 text-[14px] font-medium text-[#5E5E5E] hover:text-[#A5C232] dark:text-white/60"
+                            className="block rounded-[10px] px-4 py-2 text-[14px] font-medium text-[#4A5B53] hover:text-[#2D6A35] dark:text-white/60"
                           >
                             {item.label}
                           </Link>
@@ -275,7 +289,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href={link.href}
-                    className="block rounded-[12px] px-4 py-3 text-[15px] font-semibold text-[#272320] hover:text-[#A5C232] dark:text-white/85"
+                    className="block rounded-[12px] px-4 py-3 text-[15px] font-semibold text-[#253830] hover:text-[#2D6A35] dark:text-white/85"
                   >
                     {link.label}
                   </Link>
@@ -286,7 +300,7 @@ const Navbar = () => {
 
           {/* Mobile Language Selector Pills */}
           <div className="mt-5 border-t border-[#EFEFEF] pt-4 dark:border-white/10">
-            <p className="mb-2 text-[12px] font-semibold uppercase tracking-wider text-[#5E5E5E] dark:text-white/50">
+            <p className="mb-2 text-[12px] font-semibold uppercase tracking-wider text-[#4A5B53] dark:text-white/50">
               Language / اللغة
             </p>
             <div className="grid grid-cols-5 gap-1.5">
@@ -294,10 +308,11 @@ const Navbar = () => {
                 <button
                   key={lang.code}
                   onClick={() => setLanguage(lang.code)}
-                  className={`flex flex-col items-center justify-center rounded-xl py-2 text-[12px] font-semibold transition ${language === lang.code
-                      ? 'bg-[#A5C232] text-white shadow-sm'
-                      : 'border border-[#E2E2E2] bg-white text-[#0D1615] dark:border-white/15 dark:bg-white/5 dark:text-white'
-                    }`}
+                  className={`flex flex-col items-center justify-center rounded-xl py-2 text-[12px] font-semibold transition ${
+                    language === lang.code
+                      ? 'bg-[#7E9E2C] text-white font-bold shadow-sm'
+                      : 'border border-[#E2E8E3] bg-white text-[#0F221B] dark:border-white/15 dark:bg-white/5 dark:text-white'
+                  }`}
                 >
                   <span className="text-sm">{lang.flag}</span>
                   <span className="mt-0.5 text-[11px]">{lang.short}</span>
@@ -309,7 +324,7 @@ const Navbar = () => {
           <div className="mt-4 flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="flex-1 rounded-[12px] border border-[#E2E2E2] px-4 py-2.5 text-center text-sm font-semibold text-[#0D1615] dark:border-white/15 dark:text-white"
+              className="flex-1 rounded-[12px] border border-[#E2E8E3] px-4 py-2.5 text-center text-sm font-semibold text-[#0F221B] dark:border-white/15 dark:text-white"
             >
               {theme === 'light' ? (
                 <FiMoon className="inline h-4 w-4 align-middle ltr:mr-2 rtl:ml-2" />

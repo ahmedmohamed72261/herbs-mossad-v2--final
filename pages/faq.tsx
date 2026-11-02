@@ -198,17 +198,17 @@ const FaqPage = () => {
             </div>
 
             {/* Direct Contact Assistance Card */}
-            <div className="mt-14 rounded-2xl bg-gradient-to-br from-[#0F241A] via-[#153426] to-[#0A1811] border border-[#A5C232]/30 p-8 text-white shadow-2xl">
+            <div className="mt-14 rounded-2xl bg-gradient-to-br from-[#EEF6EA] via-[#FAF8F5] to-[#E2EFE0] border border-[#D5E2D4] p-8 text-[#0E231B] shadow-lg dark:from-[#0B1512] dark:via-[#0F1E19] dark:to-[#09120F] dark:border-white/10 dark:text-white">
               <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-start">
                 <div>
-                  <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#D1F349]">
-                    <img src="/images/logo-leaves.png" alt="" className="h-4 w-auto max-h-4 object-contain shrink-0 inline-block brightness-0 invert" />
+                  <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#2D6A35] dark:text-[#C6A15B]">
+                    <img src="/images/logo-leaves.png" alt="" className="h-4 w-auto max-h-4 object-contain shrink-0 inline-block" />
                     {isAr ? 'فريق المبيعات والتصدير' : 'B2B Trade Desk'}
                   </span>
-                  <h3 className="mt-1 font-display text-xl font-bold sm:text-2xl text-white">
+                  <h3 className="mt-1 font-display text-xl font-bold sm:text-2xl text-[#0E231B] dark:text-white">
                     {page.contactTitle}
                   </h3>
-                  <p className="mt-2 max-w-lg text-sm text-white/90">
+                  <p className="mt-2 max-w-lg text-sm text-[#2C3F34] dark:text-white/80">
                     {page.contactDesc}
                   </p>
                 </div>
@@ -221,7 +221,7 @@ const FaqPage = () => {
                     href="https://wa.me/201107762512"
                     target="_blank"
                     rel="noreferrer"
-                    className="btn-white inline-flex items-center gap-2 px-6 py-3 font-bold"
+                    className="btn-white inline-flex items-center gap-2 px-6 py-3 font-bold bg-white text-[#0E231B] border border-[#D5E2D4] hover:bg-[#FAF8F5] dark:bg-white/10 dark:text-white dark:border-white/15 dark:hover:bg-white/20"
                   >
                     <span>WhatsApp</span>
                   </a>

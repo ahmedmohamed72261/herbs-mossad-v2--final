@@ -12,46 +12,32 @@ const PageBanner = ({ title, subtitle, breadcrumb = [] }: PageBannerProps) => {
   const { language } = useAppStore();
 
   return (
-    <section className="page-banner">
-      <div className="absolute inset-0 bg-[#0D1615]" />
-      <img
-        src="/images/organic/banner-img01.webp"
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover opacity-25"
-      />
-      <img
-        src="/images/organic/sub-img.png"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-10 right-4 hidden w-56 opacity-60 md:block"
-      />
-
+    <section className="relative overflow-hidden bg-gradient-to-r from-[#F0F5ED] via-[#FAF8F5] to-[#E8F1E5] py-12 md:py-16 text-center border-b border-[#E2E8E3] dark:from-[#09120F] dark:via-[#0D1A15] dark:to-[#070E0B] dark:border-white/10">
       <div className="container relative z-10">
-        <nav className="mb-4 flex flex-wrap items-center justify-center gap-2 text-[15px] font-medium text-white/70">
-          <Link href="/" className="transition hover:text-[#D1F349]">
+        <nav className="mb-3 flex flex-wrap items-center justify-center gap-2 text-[13px] font-semibold text-[#485D51] dark:text-white/60">
+          <Link href="/" className="transition hover:text-[#2D6A35] dark:hover:text-[#C6A15B]">
             {language === 'ar' ? 'الرئيسية' : 'Home'}
           </Link>
           {breadcrumb.map((crumb) => (
             <span key={crumb.label} className="inline-flex items-center gap-2">
-              <FiChevronRight className="h-4 w-4 text-[#A5C232] rtl:rotate-180" />
+              <FiChevronRight className="h-3.5 w-3.5 text-[#7E9E2C] rtl:rotate-180" />
               {crumb.href ? (
-                <Link href={crumb.href} className="transition hover:text-[#D1F349]">
+                <Link href={crumb.href} className="transition hover:text-[#2D6A35] dark:hover:text-[#C6A15B]">
                   {crumb.label}
                 </Link>
               ) : (
-                <span className="text-[#D1F349]">{crumb.label}</span>
+                <span className="font-bold text-[#8C6D2D] dark:text-[#C6A15B]">{crumb.label}</span>
               )}
             </span>
           ))}
         </nav>
 
-        <h1 className="font-display text-[32px] font-bold capitalize leading-tight text-white md:text-[52px]">
+        <h1 className="font-display text-[28px] font-bold capitalize leading-tight text-[#0E231B] md:text-[42px] dark:text-white">
           {title}
         </h1>
 
         {subtitle && (
-          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-[1.85] text-white/75 md:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-[15px] leading-relaxed text-[#3B4E44] md:text-base dark:text-white/70">
             {subtitle}
           </p>
         )}

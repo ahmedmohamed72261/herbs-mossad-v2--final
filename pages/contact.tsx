@@ -125,7 +125,7 @@ const Contact = () => {
     { icon: FiMapPin, label: t.contact.address, value: page.addressText, href: null },
     { icon: FiPhone, label: t.contact.phoneNumber, value: isEn ? '+20 110 776 2512' : '00201107762512', href: 'tel:+201107762512' },
     { icon: FaWhatsapp, label: 'WhatsApp', value: isEn ? '+20 110 776 2512' : '00201107762512', href: 'https://wa.me/201107762512' },
-    { icon: FiMail, label: t.contact.emailAddress, value: 'info@herbiva.com', href: 'mailto:info@herbiva.com' },
+    { icon: FiMail, label: t.contact.emailAddress, value: 'export@herbiva.com', href: 'mailto:export@herbiva.com' },
   ];
 
   return (
@@ -148,22 +148,22 @@ const Contact = () => {
       />
 
       {/* Main Content (B2B Request a Quote Form & Direct Channels) */}
-      <section className="section-shell bg-white">
+      <section className="section-shell bg-white dark:bg-[#0C1512]">
         <FadeIn className="container">
           <div className="grid gap-12 lg:grid-cols-[1.25fr_0.75fr]">
             {/* RFQ Form Box */}
-            <div className="glass-panel p-8 md:p-10 shadow-sm border border-[#E2E2E2]/70 dark:border-white/10">
+            <div className="glass-panel p-8 md:p-10 shadow-sm border border-[#E2E8E3] dark:border-white/10">
               <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
                 <div>
                   <span className="eyebrow mb-2">
-                    <FiPackage className="h-4 w-4 text-[#A5C232]" />
+                    <FiPackage className="h-4 w-4 text-[#7E9E2C]" />
                     {isEn ? 'B2B Wholesale Quotation' : 'طلب تسعير توريد بالجملة'}
                   </span>
-                  <h2 className="font-display text-[26px] font-bold text-[#0D1615] dark:text-white md:text-[32px]">
+                  <h2 className="font-display text-[26px] font-bold text-[#0F221B] dark:text-white md:text-[32px]">
                     {isEn ? 'Request a Formal Price Quote' : 'اطلب عرض سعر رسمي لشحنتك'}
                   </h2>
                 </div>
-                <span className="rounded-full bg-[#A5C232]/10 px-3.5 py-1 text-xs font-bold text-[#738827] dark:text-[#D1F349]">
+                <span className="rounded-full bg-[#7E9E2C]/15 px-3.5 py-1 text-xs font-bold text-[#2D6A35] dark:text-[#C6A15B]">
                   {isEn ? 'Response within 24h' : 'رد خلال ٢٤ ساعة'}
                 </span>
               </div>
@@ -175,11 +175,11 @@ const Contact = () => {
               </p>
 
               {submitted ? (
-                <div className="rounded-[20px] bg-[#F6F4EC] p-8 text-center dark:bg-white/5 border border-[#A5C232]/40">
-                  <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-[#A5C232] text-white shadow-lg">
+                <div className="rounded-[20px] bg-[#FAF8F5] p-8 text-center dark:bg-white/5 border border-[#7E9E2C]/40">
+                  <div className="mx-auto mb-4 grid h-16 w-16 place-items-center rounded-full bg-[#7E9E2C] text-[#0A1713] shadow-lg">
                     <FiCheckCircle className="h-8 w-8" />
                   </div>
-                  <h3 className="font-display text-2xl font-bold text-[#0D1615] dark:text-white">
+                  <h3 className="font-display text-2xl font-bold text-[#0F221B] dark:text-white">
                     {isEn ? 'Inquiry Transmitted Successfully!' : 'تم استلام طلبك بنجاح!'}
                   </h3>
                   <p className="section-lead mx-auto mt-3 max-w-lg">
@@ -412,21 +412,21 @@ const Contact = () => {
             {/* Contact Info & Verified Channels */}
             <div className="flex flex-col gap-6">
               {/* Direct Channels */}
-              <div className="glass-panel relative flex-1 overflow-hidden p-8 md:p-10 border border-[#E2E2E2]/70 dark:border-white/10">
+              <div className="glass-panel relative flex-1 overflow-hidden p-8 md:p-10 border border-[#E2E8E3] dark:border-white/10">
                 <div className="pointer-events-none absolute right-0 top-0 h-64 w-64 opacity-10">
-                  <div className="h-full w-full rounded-full bg-[#A5C232] blur-3xl" />
+                  <div className="h-full w-full rounded-full bg-[#7E9E2C] blur-3xl" />
                 </div>
-                <h2 className="relative z-10 mb-6 font-display text-[24px] font-bold text-[#0D1615] dark:text-white">
+                <h2 className="relative z-10 mb-6 font-display text-[24px] font-bold text-[#0F221B] dark:text-white">
                   {isEn ? 'Direct Commercial Channels' : 'قنوات التواصل المباشرة'}
                 </h2>
                 <div className="relative z-10 space-y-6">
                   {contactInfo.map((item) => (
                     <div key={item.label} className="group flex items-start gap-4">
-                      <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#A5C232]/10 text-[#A5C232] transition-all duration-300 group-hover:bg-[#A5C232] group-hover:text-white">
+                      <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#7E9E2C]/15 text-[#2D6A35] transition-all duration-300 group-hover:bg-[#7E9E2C] group-hover:text-[#0A1713]">
                         <item.icon className="h-5 w-5" />
                       </div>
                       <div className="pt-0.5">
-                        <h3 className="text-xs font-bold uppercase tracking-wider text-[#738827] dark:text-[#A5C232]">
+                        <h3 className="text-xs font-bold uppercase tracking-wider text-[#2D6A35] dark:text-[#C6A15B]">
                           {item.label}
                         </h3>
                         {item.href ? (
@@ -434,12 +434,12 @@ const Contact = () => {
                             href={item.href}
                             target={item.href.startsWith('http') ? '_blank' : undefined}
                             rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-                            className="font-display text-[16px] font-semibold text-[#0D1615] transition hover:text-[#A5C232] dark:text-white"
+                            className="font-display text-[16px] font-semibold text-[#0F221B] transition hover:text-[#2D6A35] dark:text-white"
                           >
                             {item.value}
                           </a>
                         ) : (
-                          <p className="font-display text-[15px] font-semibold text-[#0D1615] dark:text-white">
+                          <p className="font-display text-[15px] font-semibold text-[#0F221B] dark:text-white">
                             {item.value}
                           </p>
                         )}
@@ -450,8 +450,8 @@ const Contact = () => {
               </div>
 
               {/* Quality & Traceability Commitment */}
-              <div className="glass-panel p-8 border border-[#E2E2E2]/70 dark:border-white/10">
-                <h3 className="mb-3 font-display text-[19px] font-bold text-[#0D1615] dark:text-white">
+              <div className="glass-panel p-8 border border-[#E2E8E3] dark:border-white/10">
+                <h3 className="mb-3 font-display text-[19px] font-bold text-[#0F221B] dark:text-white">
                   {isEn ? 'Export Assurance & Documentation' : 'ضمانات التصدير والمستندات'}
                 </h3>
                 <p className="section-lead mb-5 text-sm">
@@ -463,7 +463,7 @@ const Contact = () => {
                   {['ISO 22000', 'HACCP', 'Phytosanitary', 'COA Verified', 'Fumigated'].map((badge) => (
                     <span
                       key={badge}
-                      className="inline-flex items-center gap-1 rounded-full bg-[#A5C232]/10 px-3 py-1 text-xs font-bold text-[#738827] dark:text-[#D1F349]"
+                      className="inline-flex items-center gap-1 rounded-full bg-[#7E9E2C]/15 px-3 py-1 text-xs font-bold text-[#2D6A35] dark:text-[#C6A15B]"
                     >
                       <FiCheckCircle className="h-3 w-3" />
                       {badge}
@@ -473,18 +473,18 @@ const Contact = () => {
               </div>
 
               {/* Facility Location Card */}
-              <div className="relative h-52 overflow-hidden rounded-[20px] border border-[#E2E2E2]/70">
+              <div className="relative h-52 overflow-hidden rounded-[20px] border border-[#E2E8E3]">
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: "url('/images/agriculture-healthy-food.jpg')" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1615]/80 via-[#0D1615]/30 to-transparent flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1713]/85 via-[#0A1713]/40 to-transparent flex items-end p-6">
                   <div className="flex items-center gap-3 text-white">
-                    <span className="grid h-10 w-10 place-items-center rounded-full bg-[#A5C232] text-white">
+                    <span className="grid h-10 w-10 place-items-center rounded-full bg-[#7E9E2C] text-[#0A1713]">
                       <FiMapPin className="h-5 w-5" />
                     </span>
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-[#D1F349] font-bold">
+                      <p className="text-xs uppercase tracking-wider text-[#C6A15B] font-bold">
                         {isEn ? 'Processing & Farm Facilities' : 'منشآت التجهيز والمزارع'}
                       </p>
                       <p className="font-display font-bold text-sm">
@@ -501,7 +501,7 @@ const Contact = () => {
 
       {/* Export Countries (Global Reach) */}
       {countries.length > 0 && (
-        <section className="section-shell section-dim border-t border-[#E2E2E2]/70 dark:border-white/10">
+        <section className="section-shell bg-[#FAF8F5] border-t border-[#E2E8E3] dark:border-white/10 dark:bg-[#0E1A15]">
           <FadeIn className="container">
             <div className="mb-14 text-center">
               <span className="eyebrow justify-center">🌍 {t.exportCountries.title}</span>
@@ -512,19 +512,19 @@ const Contact = () => {
               {countries.map((country) => (
                 <StaggerItem key={country._id}>
                   <div className="group flex flex-col items-center gap-3">
-                    <div className="img-frame h-16 w-24 rounded-[12px] border border-[#E2E2E2] transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-[10px_20px_30px_rgba(0,0,0,0.12)]">
+                    <div className="img-frame h-16 w-24 rounded-[12px] border border-[#E2E8E3] bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
                       {country.flag ? (
                         <img
                           src={getAssetUrl(country.flag)}
                           alt={isEn ? country.name_en : country.name_ar}
                         />
                       ) : (
-                        <div className="grid h-full w-full place-items-center bg-[#0D1615]/5">
-                          <FiMapPin className="h-6 w-6 text-[#5E5E5E]" />
+                        <div className="grid h-full w-full place-items-center bg-[#FAF8F5]">
+                          <FiMapPin className="h-6 w-6 text-[#4A5B53]" />
                         </div>
                       )}
                     </div>
-                    <span className="text-center text-sm font-bold leading-tight text-[#0D1615] dark:text-white">
+                    <span className="text-center text-sm font-bold leading-tight text-[#0F221B] dark:text-white">
                       {isEn ? country.name_en : country.name_ar}
                     </span>
                   </div>

@@ -89,15 +89,15 @@ const Team = () => {
                             className="h-full w-full object-cover"
                           />
                         ) : (
-                          <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-[#122820] to-[#0A1713] text-white">
-                            <span className="font-display text-3xl font-extrabold tracking-wider text-[#D1F349]">
+                          <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-[#EEF4EC] to-[#E2EFE0] text-[#0E231B] border border-[#D5E2D4] dark:from-[#11241D] dark:to-[#0A1612] dark:text-white dark:border-white/15">
+                            <span className="font-display text-3xl font-extrabold tracking-wider text-[#2D6A35] dark:text-[#C6A15B]">
                               {(language === 'ar' ? member.name_ar : member.name_en)
                                 .split(' ')
                                 .slice(0, 2)
                                 .map((n: string) => n[0])
                                 .join(' ')}
                             </span>
-                            <span className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-[#C6A15B]">
+                            <span className="mt-1 text-[10px] font-semibold uppercase tracking-widest text-[#7E9E2C] dark:text-[#7E9E2C]">
                               Herbiva Egypt
                             </span>
                           </div>
